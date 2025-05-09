@@ -47,6 +47,14 @@ const signUpController = async (req, res) => {
     }
   } catch (error) {
     console.log("Catch block signup", error);
+        res.status(500).json({
+          error: {
+            errorCode: 500,
+            isError: true,
+            message: `mongodb error  signup catch ${error}`,
+          },
+          data: null,
+        });
   }
 };
 export default signUpController;

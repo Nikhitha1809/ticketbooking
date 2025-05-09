@@ -42,6 +42,14 @@ const signInController = async (req, res) => {
     }
   } catch (error) {
     console.log("error while signup", error);
+    res.status(500).json({
+          error: {
+            errorCode: 500,
+            isError: true,
+            message: `mongodb error in catch ${error}`,
+          },
+          data: null,
+        });
   }
 };
 export default signInController;
