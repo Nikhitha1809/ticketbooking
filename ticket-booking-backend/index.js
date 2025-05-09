@@ -17,7 +17,6 @@ app.use(
         origin:[
             "http://localhost:5173",
             "https://movie-ticketbooking.vercel.app/",
-            "*"
         ],
         methods:[ "GET","POST","PUT","PATCH","DELETE"],
         allowedHeaders:[
