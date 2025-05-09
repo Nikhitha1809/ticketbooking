@@ -121,7 +121,7 @@ function NavbarComp({ isLoggedIn,setIsLoggedIn,formValues,setFormValues,setLogge
           <Nav className="me-auto">
             {/* <Nav.Link href="#browse" style={{ paddingRight: "20px", paddingLeft: "20px" }} className='nav-style'>Browse</Nav.Link> */}
             {/* <Nav.Link href="#shows" style={{ paddingRight: "20px", paddingLeft: "20px" }} className='nav-style'>TV-shows</Nav.Link> */}
-            <Link to="/wishlist" style={{ paddingRight: "20px", paddingLeft: "20px" }} className='nav-style'>Wishlist</Link>
+            <Link to="/wishlist" style={{ paddingRight: "20px", paddingLeft: "20px",textDecoration:"none",color:"black" }} >Wishlist</Link>
             {/* <Nav.Link href="#games" style={{ paddingRight: "20px", paddingLeft: "20px" }} className='nav-style'>Games</Nav.Link> */}
           </Nav>
           <Nav>
