@@ -32,16 +32,14 @@ app.use(
 app.get("/", async(req,res)=>{
     res.status(200).end("Hello from Ticket Booking")
 });
-const router= Router();
 
-router.post("/sign-in",signInController);
-router.post("/sign-up",signUpController);
 
-app.use("/api",router);
+app.post("/api/sign-in",signInController);
+app.post("/api/sign-up",signUpController);
 
-http.createServer(app).listen(5000,()=>{
-    try{
-        console.log("Http server started");
+app.listen(5000,()=>{
+     try{
+        console.log("Express server started");
         mongoose.connect("mongodb://127.0.0.1:27017/movies")
         .then(()=>{
             console.log("mongodb connected")
