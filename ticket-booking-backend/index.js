@@ -16,15 +16,13 @@ app.use(
     cors({
         origin:[
             "http://localhost:5173",
-            "https://movie-ticketbooking.vercel.app/",
+            "https://movie-ticketbooking.vercel.app",
         ],
         methods:[ "GET","POST","PUT","PATCH","DELETE"],
         allowedHeaders:[
             "Content-Type",
             "Authorization",
             "X-session-token",
-            "Access-Control-Expose-Headers",
-            "Access-Control-Allow-Origin",
         ],
         preflightContinue:false,
     })
