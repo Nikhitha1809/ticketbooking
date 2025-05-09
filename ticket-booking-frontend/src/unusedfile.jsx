@@ -195,3 +195,36 @@
 //   )
 // }
 // export default NavbarComp
+
+
+//pagination old code
+
+ {/* {len >6 ?(
+        <ReactPaginate 
+          breakLabel="..."
+          nextLabel=" next"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={len}
+          previousLabel="previous "
+          renderOnZeroPageCount={null}
+          containerClassName='pagination'
+          pageLinkClassName='paginate-items'
+          previousLinkClassName='paginate-items'
+          nextLinkClassName='paginate-items'
+          activeClassName='active'
+        />):(<ReactPaginate 
+          breakLabel="..."
+          nextLabel=" next"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={pageCount}
+          previousLabel="previous "
+          renderOnZeroPageCount={null}
+          containerClassName='pagination'
+          pageLinkClassName='paginate-items'
+          previousLinkClassName='paginate-items'
+          nextLinkClassName='paginate-items'
+          activeClassName='active'
+        />)} */}
+        

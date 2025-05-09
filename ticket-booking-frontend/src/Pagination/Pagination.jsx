@@ -21,7 +21,7 @@ function Pagination({movies,query}) {
     return (
       <>
         <HomeCarousel movies={currentItems} query={query} lenfn={setLen}/>
-        {len > 0 && (
+        {len > 0 ?(
           <ReactPaginate 
             breakLabel="..."
             nextLabel=" next"
@@ -36,37 +36,7 @@ function Pagination({movies,query}) {
             nextLinkClassName='paginate-items'
             activeClassName='active'
           />
-        )}
-
-        {/* {len >6 ?(
-        <ReactPaginate 
-          breakLabel="..."
-          nextLabel=" next"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={5}
-          pageCount={len}
-          previousLabel="previous "
-          renderOnZeroPageCount={null}
-          containerClassName='pagination'
-          pageLinkClassName='paginate-items'
-          previousLinkClassName='paginate-items'
-          nextLinkClassName='paginate-items'
-          activeClassName='active'
-        />):(<ReactPaginate 
-          breakLabel="..."
-          nextLabel=" next"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={5}
-          pageCount={pageCount}
-          previousLabel="previous "
-          renderOnZeroPageCount={null}
-          containerClassName='pagination'
-          pageLinkClassName='paginate-items'
-          previousLinkClassName='paginate-items'
-          nextLinkClassName='paginate-items'
-          activeClassName='active'
-        />)} */}
-        
+        ):"No Results found"}
       </>
     );
   }
