@@ -39,7 +39,7 @@ app.post("/api/sign-up",signUpController);
 app.listen(5000,()=>{
      try{
         console.log("Express server started");
-        mongoose.connect("mongodb://127.0.0.1:27017/movies")
+        mongoose.connect("mongodb+srv://chilukurinikhitha1999:IvCN6eXxNoECncUp@movies.rcmymor.mongodb.net/?retryWrites=true&w=majority&appName=movies")
         .then(()=>{
             console.log("mongodb connected")
         }).catch((e)=>{
