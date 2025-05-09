@@ -1,0 +1,39 @@
+.login-form{
+    background-color: #272727;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    gap: 20px;
+    border-radius: 12px;
+    width: 450px;
+}
+.label-name{
+    font-size: 20px;
+    font-family: "roboto";
+    font-weight: 400;
+    color: white;
+}
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+}
+.input-type{
+    border-radius: 4px;
+    background-color: transparent;
+    border:2px solid lightblue ;
+    outline: none;
+    color: white;
+}
+.heading{
+    color: white;
+    font-weight: 700;
+    text-align: center;
+}
+.login-btn{
+    border-radius: 4px;
+    height: 30px;
+    border: none;
+}

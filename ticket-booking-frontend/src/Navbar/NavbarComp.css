@@ -1,0 +1,67 @@
+.navbar{
+  margin-bottom: 50px !important;
+}
+
+.search-btn{
+  margin-left: 5px;
+  margin-right: 5px;
+  border: none;
+  background: none;
+}
+  .search-div{
+    display: flex;
+    flex-direction: row;
+  }
+  .nav-style:hover{
+    color: black;
+    font-weight: 600;
+  }
+  .dropDownProfile{
+    position: absolute;
+    top: 4rem;
+    right:2rem;
+    width: 120px;
+    /* padding: 10px; */
+    padding-left: -5px;
+    padding-top: 5px;
+    border-radius: 15px;
+    background-color: white;
+    border: 1px solid grey;
+  }
+
+  .dropDownProfile::before{
+    content:'';
+    position: absolute;
+    top:-0.7rem;
+    right: 1rem;
+    width:20px;
+    height: 20px;
+    transform: rotate(45deg);
+    background-color: white;
+    border-left:1px solid ;
+    border-top: 1px solid ;
+  }
+  .wel-text{
+    padding-right: 15px;
+    padding-top: 1rem;
+    
+  }
+.signin-btn{
+  border:none;
+  border-radius: 10px;
+  width: 100px;
+ margin-top: 3%;
+ margin-left:30%;
+ margin-bottom: 3%;
+  color: white;
+  background-color: rgb(38, 108, 220);
+}
+.signin-btn:hover{
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  transform: scale(1.2);
+  background-color:rgb(48, 85, 154);
+}
+.cross-btn{
+  cursor: pointer;
+}

@@ -1,0 +1,30 @@
+.pagination{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 5rem;
+}
+.paginate-items{
+   
+    font-size: 1.2rem;
+    margin-bottom: 5rem;
+    padding: 8px 15px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+.pagination .active {
+    color: white !important;
+    background-color: antiquewhite; /* Background color for selected item */
+    height: 40px;
+  }
+.paginate-items:hover{
+    /* background-color: #5AB1BB; */
+    background-color: antiquewhite;
+    color: black;
+}
+.pagination .paginate-items.active:hover {
+    background-color: black; /* Background color when hovering over the active item */
+  }

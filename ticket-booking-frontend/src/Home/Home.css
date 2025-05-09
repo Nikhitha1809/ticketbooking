@@ -1,0 +1,13 @@
+.search-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.movies-list{
+    display: flex;
+    flex-direction: column;
+    margin: 1%;
+  }
+.search{
+  width: 400px;
+}
