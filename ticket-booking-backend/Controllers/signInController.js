@@ -1,4 +1,5 @@
 import userModel from "../Models/userModel.js";
+import jwt from "jsonwebtoken";
 
 const signInController = async (req, res) => {
   try {
@@ -16,23 +17,43 @@ const signInController = async (req, res) => {
         data: null,
       });
     } else {
-      const correctUserDetails = await userModel.find({
+      const correctUserDetails = await userModel.findOne({
         email: userDetails.email,
         password: userDetails.password,
       });
-      if (correctUserDetails.length > 0) {
-        res.status(200).json({
-          error: {
-            errorCode: 200,
-            isError: false,
-            message: "",
+     
+      if (correctUserDetails) {
+        let payload = {
+          user: {
+            id: correctUserDetails.id,
           },
-          data: correctUserDetails,
-        });
+        };
+        jwt.sign(
+          payload,
+          "jwtPassword",
+          { expiresIn: 360000000 },
+          (error, token) => {
+            if (error) throw error;
+            const userTokenObj = {
+              ...correctUserDetails._doc, token
+            }
+        console.log("correct",userTokenObj);
+
+           res.status(200).json({
+              error: {
+                errorCode: 200,
+                isError: false,
+                message: "",
+              },
+              data: userTokenObj,
+            });
+          }
+        );
+             
       } else {
-        res.status(404).json({
+        res.status(400).json({
           error: {
-            errorCode: 404,
+            errorCode: 400,
             isError: true,
             message: "Incorrect password",
           },
@@ -43,13 +64,13 @@ const signInController = async (req, res) => {
   } catch (error) {
     console.log("error while signup", error);
     res.status(500).json({
-          error: {
-            errorCode: 500,
-            isError: true,
-            message: `mongodb error in catch ${error}`,
-          },
-          data: null,
-        });
+      error: {
+        errorCode: 500,
+        isError: true,
+        message: `mongodb error in catch ${error}`,
+      },
+      data: null,
+    });
   }
 };
 export default signInController;

@@ -1,5 +1,6 @@
 .navbar{
   margin-bottom: 50px !important;
+  display: flex;
 }
 
 .search-btn{
@@ -50,18 +51,30 @@
   border:none;
   border-radius: 10px;
   width: 100px;
- margin-top: 3%;
- margin-left:30%;
- margin-bottom: 3%;
+  margin-top: 3%;
+  margin-left:30%;
+  margin-bottom: 3%;
   color: white;
   background-color: rgb(38, 108, 220);
 }
 .signin-btn:hover{
-  -ms-transform: scale(1.2); /* IE 9 */
-  -webkit-transform: scale(1.2); /* Safari 3-8 */
-  transform: scale(1.2);
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
   background-color:rgb(48, 85, 154);
 }
 .cross-btn{
   cursor: pointer;
+}
+.wishlist-btn{
+    padding-right: "20px";
+     padding-left: "20px";
+     text-decoration:"none";
+     color:"black" 
+}
+@media screen and (max-width:600px) {
+  .signin-btn{
+    margin-left: 0px;
+    width: fit-content;
+  }
 }

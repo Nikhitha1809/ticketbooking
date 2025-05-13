@@ -26,10 +26,10 @@ const signUpController = async (req, res) => {
         })
         .catch((error) => {
           console.log("User not created, please try again", error);
-          res.status(404).json({
+          res.status(400).json({
             error: {
               isError: true,
-              errorCode: 404,
+              errorCode: 400,
               message: "Your account not created, please try again...",
             },
             data: "",
@@ -39,7 +39,7 @@ const signUpController = async (req, res) => {
       res.status(500).json({
         error: {
           isError: true,
-          errorCode: 404,
+          errorCode: 500,
           message: "Your account already created, please signIn...",
         },
         data: "",

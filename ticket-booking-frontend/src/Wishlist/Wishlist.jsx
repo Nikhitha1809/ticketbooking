@@ -7,11 +7,13 @@ import cartImg from "../../src/assets/empty-cart-logo.png";
 import confirmImg from "../../src/assets/confirm.jpg";
 import Modal from '../Modal/Modal.jsx';
 const Wishlist = () => {
+
   const location = useLocation();
   const { title } = location.state || {};
   const { wishlist, increaseQuantity, decreaseQuantity, clearWishlist } =
     useContext(WishlistContext);
     const [openModal, setOpenModal] = useState(false);
+    const [authData,setAuthData]= useState(false);
     const navigate = useNavigate();
 
   // adding all the wishlist items
@@ -23,9 +25,16 @@ const Wishlist = () => {
     clearWishlist();
     navigate('/')
   }
+  if(!authData){
+    if(localStorage.getItem('token')){
+      setAuthData(true);
+    }
+  }
+
   return (
     <div>
       {/* <h1>My Wishlist</h1> */}
+      {authData ?
       <div className="wishlist">
         {wishlist?.length === 0 ? (
           <div className="d-flex flex-column justify-content-center align-items-center">
@@ -100,7 +109,10 @@ const Wishlist = () => {
 
           </div>
         )}
-      </div>
+      </div> :
+      <div className="signin-text">Please click on signIn to access wish List </div>
+      }
+     
     </div>
   );
 };

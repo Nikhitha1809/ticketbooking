@@ -67,7 +67,7 @@ const MovieDetails = () => {
           <div>
             {/* details div */}
             <div className="details-container">
-              <h2 style={{ color: "white", fontSize:"36px ",fontWeight:"bold"}}>{data.title}</h2>
+              <h2 className="title">{data.title}</h2>
               {/* <p className="description details-heading">Details</p> */}
               <div className="d-flex flex-column">
                 <div className="d-flex flex-row description">

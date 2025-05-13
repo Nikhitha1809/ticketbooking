@@ -1,11 +1,10 @@
 import express from 'express';
 import cors from 'cors';
-import https from "node:https";
-import http from "node:http";
-import { Router } from 'express';
 import mongoose from 'mongoose';
+import middleware from './middleware.js';
 import signInController from './Controllers/signInController.js';
 import signUpController from './Controllers/signUpController.js';
+
 
 const app = express();
 app.use(express.json({limit:"50mb"}));

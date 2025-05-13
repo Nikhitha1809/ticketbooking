@@ -12,6 +12,11 @@
     border-radius: 10px;
    
 }
+.description{
+    color: rgba(255, 255, 255, 0.902);
+    font-size: 20px;
+}
+
 .watch-button{
     color: white;
     background-color: black;
@@ -33,10 +38,7 @@
     /* width: 57vw;
     height: 40vw; */
 }
-.description{
-    color: rgba(255, 255, 255, 0.902);
-    font-size: 20px;
-}
+
 .details-heading{
     font-size: 26px;
     font-weight: 500;
@@ -53,4 +55,33 @@
 }
 .back-btn:hover{
     box-shadow: 4px 4px 10px rgba(222, 217, 217, 0.947);
+}
+.title{
+    color: "white";
+    font-size:"36px ";
+    font-weight:"bold"
+}
+@media screen and (max-width: 600px){
+    .movie-details-container{
+        max-width: fit-content;
+    }
+    .title{
+        font-size: small;
+        color: white;
+    }
+    .description{
+    color: rgba(255, 255, 255, 0.902);
+    font-size: small;
+    }
+    .back-btn{
+    width: 80px;
+    height: 40px;
+    font-size:small ;
+    background-color: #e5e5e5;
+    border-radius: 4px;
+    border-color: skyblue;
+    border-width: 1px;
+    margin-top: 20px;
+    margin-left: 10px;
+    }
 }

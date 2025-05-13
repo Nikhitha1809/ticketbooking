@@ -44,6 +44,8 @@ function NavbarComp({ isLoggedIn,setIsLoggedIn,formValues,setFormValues,setLogge
   const signOut = () => {
     setIsLoggedIn(false);
     setShowDropdown(false);
+    localStorage.clear();
+    navigate('/');
   };
 
   const signIn = () => {
@@ -77,14 +79,19 @@ function NavbarComp({ isLoggedIn,setIsLoggedIn,formValues,setFormValues,setLogge
       }
     );
     const signInResponse = await signInSubmit.json();
-    // console.log("signInRes",signInResponse)
+    // console.log("signInRes",signInResponse);
+    
     if(signInResponse.error.isError){
-      toast.error(signInResponse.error.message)
+      // console.log("error",signInResponse.error.message)
+      toast.error(signInResponse.error.message);
+   
     }else{
       toast.success("Hurry, your logged in...");
+      localStorage.setItem('token',signInResponse.data.token);
       setIsLoggedIn(true);
-      setLoggedInUser(signInResponse.data[0].userName); // ✅ Save logged-in username
+      setLoggedInUser(signInResponse.data.userName); // ✅ Save logged-in username
       setFormValues({username:"",email:"",password:""});
+      setFormErrors({});
       setOpenModal(false);
       navigate("/");
     }
@@ -130,7 +137,10 @@ function NavbarComp({ isLoggedIn,setIsLoggedIn,formValues,setFormValues,setLogge
               {isLoggedIn ? (
                 <PiUserCircleLight style={{ width: "30px", height: "30px" }} />
               ) : (
-                <PiUserCirclePlus style={{ width: "30px", height: "30px" }} onClick={() => setOpenModal(true)} />
+                <div className='d-flex'>
+                  <button type='button' className='signin-btn' onClick={() => setOpenModal(true)}>SignIn </button>
+                {/* <PiUserCirclePlus style={{ width: "30px", height: "30px" }} onClick={() => setOpenModal(true)} /> */}
+                  </div>
               )}
             </div>
             {isLoggedIn && showDropdown && (

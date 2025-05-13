@@ -87,3 +87,8 @@ a.no-underline:active {
 a.no-underline:hover{
     text-decoration: underline;
 }
+
+.signin-text{
+    text-align: center;
+    color: red;
+}
